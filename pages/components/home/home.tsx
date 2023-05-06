@@ -27,6 +27,7 @@ function Home({ search, brand, category, price }: { search: any, brand: any, cat
             image: "https://cdn.pixabay.com/photo/2020/09/03/12/25/school-supplies-5541102_960_720.jpg",
             item: "Bag Pack",
             price: 115,
+            discount: 15,
             review: 3277,
             rating: 3,
             brand: "brandC",
@@ -66,6 +67,7 @@ function Home({ search, brand, category, price }: { search: any, brand: any, cat
             image: "https://cdn.pixabay.com/photo/2015/12/11/13/59/lights-1088141_960_720.jpg",
             item: "Lanterns",
             price: 1120,
+            discount: 15,
             review: 2056,
             rating: 4,
             brand: "brandG",
@@ -76,14 +78,14 @@ function Home({ search, brand, category, price }: { search: any, brand: any, cat
     
     // Include all elements which includes the search query
     let updatedList = Data.filter((item) => {
-        return item.item.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        return item.item?.toLowerCase().indexOf(search?.toLowerCase()) !== -1;
     })
-    if (brand.length) {
+    if (brand?.length) {
         updatedList = updatedList.filter(item => {
             return brand.includes(item.brand)
         });
     }
-    if (category.length) {
+    if (category?.length) {
         updatedList = updatedList.filter(item => {
             return category.includes(item.category)
         });
